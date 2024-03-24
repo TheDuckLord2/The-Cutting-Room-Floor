@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci7p4mv6tp1n1"]
+[gd_scene load_steps=19 format=3 uid="uid://ci7p4mv6tp1n1"]
 
 [ext_resource type="Texture2D" uid="uid://p3hemsc3gbdr" path="res://Assets/DeskSetupNoPaper.png" id="1_bf57o"]
 [ext_resource type="Script" path="res://Scenes/DeskSpace.gd" id="1_dh3xp"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://Scenes/Duck.gd" id="10_34vfr"]
 [ext_resource type="AudioStream" uid="uid://56r7sir8pef" path="res://Assets/Quack.wav" id="11_lf8x2"]
 [ext_resource type="AudioStream" uid="uid://bqxc6cr6rrvb5" path="res://Assets/Lobo Loco - My Sunshine - Delay (ID 1981).mp3" id="12_g5v4j"]
+[ext_resource type="Texture2D" uid="uid://cknv1an3ufkw0" path="res://Assets/DescriptionOrHighScoreSetup.png" id="13_q6am6"]
+[ext_resource type="Script" path="res://Scenes/Kweet.gd" id="14_sq6yo"]
+[ext_resource type="LabelSettings" uid="uid://ci5cpxu8bolwl" path="res://Font/StandardTextFrThisTime.tres" id="15_b2i43"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qyq8u"]
 font = ExtResource("2_05bj0")
@@ -160,6 +163,26 @@ stream = ExtResource("12_g5v4j")
 volume_db = -22.286
 autoplay = true
 
+[node name="Kweet" type="Button" parent="."]
+texture_filter = 1
+offset_left = 41.0
+offset_top = 523.0
+offset_right = 188.0
+offset_bottom = 613.0
+icon = ExtResource("13_q6am6")
+flat = true
+expand_icon = true
+script = ExtResource("14_sq6yo")
+
+[node name="Label" type="Label" parent="Kweet"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 116.0
+offset_bottom = 62.0
+text = "Quit?"
+label_settings = ExtResource("15_b2i43")
+
 [connection signal="newTrends" from="." to="Phone" method="_on_node_2d_new_trends"]
 [connection signal="notePaperIn" from="." to="NoteBookPaper" method="_on_node_2d_note_paper_in"]
 [connection signal="notePaperOut" from="." to="NoteBookPaper" method="_on_node_2d_note_paper_out"]
@@ -173,3 +196,4 @@ autoplay = true
 [connection signal="keepScript" from="NoteBookPaper" to="." method="_on_note_book_paper_keep_script"]
 [connection signal="scrapScript" from="NoteBookPaper" to="." method="_on_note_book_paper_scrap_script"]
 [connection signal="pressed" from="Duck" to="Duck" method="_on_pressed"]
+[connection signal="pressed" from="Kweet" to="Kweet" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drgrn3vfp44hi"]
+[gd_scene load_steps=14 format=3 uid="uid://drgrn3vfp44hi"]
 
 [ext_resource type="Texture2D" uid="uid://p3hemsc3gbdr" path="res://Assets/DeskSetupNoPaper.png" id="1_d5kdt"]
 [ext_resource type="Texture2D" uid="uid://jfdc3a47ceym" path="res://Assets/TitleCard.png" id="2_vrxqs"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://Scenes/Button.gd" id="5_0c4lj"]
 [ext_resource type="Script" path="res://Scenes/DispHS.gd" id="6_fv258"]
 [ext_resource type="AudioStream" uid="uid://c2njh5303h174" path="res://Assets/Lisa Hammer - Jazzy Inquisitors_Lisa Hammer.mp3.mp3" id="7_twqgj"]
+[ext_resource type="Texture2D" uid="uid://cknv1an3ufkw0" path="res://Assets/DescriptionOrHighScoreSetup.png" id="8_ffeac"]
+[ext_resource type="Script" path="res://Scenes/Kweet.gd" id="9_4pfpa"]
+[ext_resource type="LabelSettings" uid="uid://ci5cpxu8bolwl" path="res://Font/StandardTextFrThisTime.tres" id="10_pegqa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lfo6"]
 font = ExtResource("3_hyobh")
@@ -100,7 +103,28 @@ script = ExtResource("6_fv258")
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_twqgj")
-volume_db = -10.0
+volume_db = -12.0
 autoplay = true
 
+[node name="Kweet" type="Button" parent="."]
+texture_filter = 1
+offset_left = 41.0
+offset_top = 523.0
+offset_right = 188.0
+offset_bottom = 613.0
+icon = ExtResource("8_ffeac")
+flat = true
+expand_icon = true
+script = ExtResource("9_4pfpa")
+
+[node name="Label" type="Label" parent="Kweet"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 116.0
+offset_bottom = 62.0
+text = "Quit?"
+label_settings = ExtResource("10_pegqa")
+
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Kweet" to="Kweet" method="_on_pressed"]

@@ -1,5 +1,6 @@
-class_name SaveData extends Resource
+extends Resource
 
+class_name SaveData
 @export var high_score:int = 0
 @export var curr_score:int = 0
 
