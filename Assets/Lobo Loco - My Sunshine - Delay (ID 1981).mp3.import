@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqxc6cr6rrvb5"
+path="res://.godot/imported/Lobo Loco - My Sunshine - Delay (ID 1981).mp3-2980777b34eb7a7255b4cdd9a0346430.mp3str"
+
+[deps]
+
+source_file="res://Assets/Lobo Loco - My Sunshine - Delay (ID 1981).mp3"
+dest_files=["res://.godot/imported/Lobo Loco - My Sunshine - Delay (ID 1981).mp3-2980777b34eb7a7255b4cdd9a0346430.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

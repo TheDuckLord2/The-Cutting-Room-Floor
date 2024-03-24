@@ -1,0 +1,175 @@
+[gd_scene load_steps=16 format=3 uid="uid://ci7p4mv6tp1n1"]
+
+[ext_resource type="Texture2D" uid="uid://p3hemsc3gbdr" path="res://Assets/DeskSetupNoPaper.png" id="1_bf57o"]
+[ext_resource type="Script" path="res://Scenes/DeskSpace.gd" id="1_dh3xp"]
+[ext_resource type="FontFile" uid="uid://b3tdq4uxriiqj" path="res://Font/FSEX300.ttf" id="2_05bj0"]
+[ext_resource type="PackedScene" uid="uid://cnwc25dhhyws2" path="res://Scenes/script_one.tscn" id="3_ir4a1"]
+[ext_resource type="PackedScene" uid="uid://g7esyjso0duv" path="res://Scenes/phone.tscn" id="4_6uvof"]
+[ext_resource type="PackedScene" uid="uid://ddxx6upjepd7q" path="res://Scenes/NotePaper.tscn" id="6_hnvb7"]
+[ext_resource type="Texture2D" uid="uid://dwhdwfoo0g7dj" path="res://Assets/GenreMatch.png" id="7_qos1g"]
+[ext_resource type="Texture2D" uid="uid://b2u6nqi2eeefl" path="res://Assets/GenreNotMatch.png" id="8_yt7if"]
+[ext_resource type="PackedScene" uid="uid://d1g4fe0j333kp" path="res://ScoreScreen.tscn" id="9_yp0mr"]
+[ext_resource type="Script" path="res://Scenes/Duck.gd" id="10_34vfr"]
+[ext_resource type="AudioStream" uid="uid://56r7sir8pef" path="res://Assets/Quack.wav" id="11_lf8x2"]
+[ext_resource type="AudioStream" uid="uid://bqxc6cr6rrvb5" path="res://Assets/Lobo Loco - My Sunshine - Delay (ID 1981).mp3" id="12_g5v4j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qyq8u"]
+font = ExtResource("2_05bj0")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yaa1w"]
+font = ExtResource("2_05bj0")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_irbpl"]
+font = ExtResource("2_05bj0")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dh3xp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_as_relative = false
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_bf57o")
+expand_mode = 3
+
+[node name="Script One" parent="." instance=ExtResource("3_ir4a1")]
+position = Vector2(363, 388)
+
+[node name="Script Two" parent="." instance=ExtResource("3_ir4a1")]
+position = Vector2(788, 388)
+scale = Vector2(1.424, 1.413)
+
+[node name="Phone" parent="." instance=ExtResource("4_6uvof")]
+position = Vector2(1039, 408)
+scale = Vector2(1.348, 1.306)
+
+[node name="NoteBookPaper" parent="." instance=ExtResource("6_hnvb7")]
+position = Vector2(573, 1202)
+
+[node name="MoneyTrack" type="Label" parent="."]
+texture_filter = 1
+offset_left = 202.0
+offset_top = 45.0
+offset_right = 363.0
+offset_bottom = 88.0
+text = "$000000000"
+label_settings = SubResource("LabelSettings_qyq8u")
+horizontal_alignment = 1
+
+[node name="Time per week" type="Timer" parent="."]
+
+[node name="GAZ" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_left = 656.0
+offset_top = 37.0
+offset_right = 864.0
+offset_bottom = 70.0
+text = "Genre Actor Zhuzh"
+label_settings = SubResource("LabelSettings_yaa1w")
+
+[node name="ZMatch" type="TextureRect" parent="."]
+visibility_layer = 3
+offset_left = 806.0
+offset_top = 54.0
+offset_right = 859.0
+offset_bottom = 102.0
+texture = ExtResource("7_qos1g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ZNoMatch" type="TextureRect" parent="."]
+offset_left = 804.0
+offset_top = 59.0
+offset_right = 856.0
+offset_bottom = 109.0
+texture = ExtResource("8_yt7if")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AMatch" type="TextureRect" parent="."]
+offset_left = 733.0
+offset_top = 56.0
+offset_right = 786.0
+offset_bottom = 104.0
+texture = ExtResource("7_qos1g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ANoMatch" type="TextureRect" parent="."]
+offset_left = 733.0
+offset_top = 59.0
+offset_right = 785.0
+offset_bottom = 109.0
+texture = ExtResource("8_yt7if")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GMatch" type="TextureRect" parent="."]
+offset_left = 663.0
+offset_top = 52.0
+offset_right = 716.0
+offset_bottom = 100.0
+texture = ExtResource("7_qos1g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GNoMatch" type="TextureRect" parent="."]
+offset_left = 662.0
+offset_top = 57.0
+offset_right = 714.0
+offset_bottom = 107.0
+texture = ExtResource("8_yt7if")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DateTrack" type="Label" parent="."]
+texture_filter = 1
+offset_left = 406.0
+offset_top = 36.0
+offset_right = 518.0
+offset_bottom = 94.0
+text = "Year: 0
+Month: 0
+Week: 0"
+label_settings = SubResource("LabelSettings_irbpl")
+
+[node name="Sprite2D" parent="." instance=ExtResource("9_yp0mr")]
+z_index = 25
+position = Vector2(-1377, 324)
+
+[node name="Duck" type="Button" parent="."]
+offset_left = 978.0
+offset_top = 29.0
+offset_right = 1074.0
+offset_bottom = 174.0
+flat = true
+script = ExtResource("10_34vfr")
+
+[node name="DuckSound" type="AudioStreamPlayer" parent="Duck"]
+stream = ExtResource("11_lf8x2")
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_g5v4j")
+volume_db = -22.286
+autoplay = true
+
+[connection signal="newTrends" from="." to="Phone" method="_on_node_2d_new_trends"]
+[connection signal="notePaperIn" from="." to="NoteBookPaper" method="_on_node_2d_note_paper_in"]
+[connection signal="notePaperOut" from="." to="NoteBookPaper" method="_on_node_2d_note_paper_out"]
+[connection signal="scoreScreenIn" from="." to="Sprite2D" method="_on_node_2d_score_screen_in"]
+[connection signal="scriptTimeout" from="." to="Script One" method="_on_node_2d_script_timeout"]
+[connection signal="scriptTimeout" from="." to="Script Two" method="_on_node_2d_script_timeout"]
+[connection signal="caching" from="Script One" to="." method="_on_script_one_caching"]
+[connection signal="schmove" from="Script One" to="Script Two" method="_on_script_one_schmove"]
+[connection signal="caching" from="Script Two" to="." method="_on_script_two_caching"]
+[connection signal="schmove" from="Script Two" to="Script One" method="_on_script_two_schmove"]
+[connection signal="keepScript" from="NoteBookPaper" to="." method="_on_note_book_paper_keep_script"]
+[connection signal="scrapScript" from="NoteBookPaper" to="." method="_on_note_book_paper_scrap_script"]
+[connection signal="pressed" from="Duck" to="Duck" method="_on_pressed"]

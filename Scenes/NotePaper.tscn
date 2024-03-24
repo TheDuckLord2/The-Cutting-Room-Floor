@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddxx6upjepd7q"]
+
+[ext_resource type="Texture2D" uid="uid://bl364uq431mrh" path="res://Assets/NotePaper.png" id="1_8y75p"]
+[ext_resource type="Script" path="res://Scenes/NotePaper.gd" id="2_3rech"]
+[ext_resource type="FontFile" uid="uid://b3tdq4uxriiqj" path="res://Font/FSEX300.ttf" id="2_6qgps"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwi24"]
+font = ExtResource("2_6qgps")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8s78"]
+font = ExtResource("2_6qgps")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(-6.25, 7)
+scale = Vector2(1.79062, 1.925)
+texture = ExtResource("1_8y75p")
+script = ExtResource("2_3rech")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.00239961
+anchor_top = -0.00146103
+anchor_right = 0.7476
+anchor_bottom = 0.754789
+offset_left = -59.6161
+offset_top = -73.7662
+offset_right = 60.3839
+offset_bottom = 49.2338
+scale = Vector2(0.5, 0.5)
+text = "Line Goes Here
+and here
+and here
+and here
+"
+label_settings = SubResource("LabelSettings_wwi24")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Keep" type="Button" parent="."]
+offset_left = 20.7719
+offset_top = 46.2338
+offset_right = 59.7719
+offset_bottom = 67.2338
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Keep"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.011
+anchor_bottom = 1.0
+offset_left = 3.36842
+offset_top = 1.55845
+offset_right = 3.93942
+offset_bottom = 3.55845
+text = "Keep"
+label_settings = SubResource("LabelSettings_s8s78")
+metadata/_edit_use_anchors_ = true
+
+[node name="Scrap" type="Button" parent="."]
+offset_left = -56.7018
+offset_top = 47.2727
+offset_right = -17.7018
+offset_bottom = 68.2727
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Scrap"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.011
+anchor_bottom = 1.0
+offset_left = -0.561408
+offset_top = 1.03896
+offset_right = 0.00959015
+offset_bottom = 3.03896
+text = "Scrap"
+label_settings = SubResource("LabelSettings_s8s78")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Keep" to="." method="_on_keep_pressed"]
+[connection signal="pressed" from="Scrap" to="." method="_on_scrap_pressed"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://g7esyjso0duv"]
+
+[ext_resource type="Texture2D" uid="uid://bfw4l6d6jvxrp" path="res://Assets/PhoneMask.png" id="1_pa4kl"]
+[ext_resource type="Script" path="res://Scenes/Sprite2D.gd" id="2_y6qb2"]
+[ext_resource type="FontFile" uid="uid://b3tdq4uxriiqj" path="res://Font/FSEX300.ttf" id="3_dro46"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wcw00"]
+font = ExtResource("3_dro46")
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj533"]
+size = Vector2(74.7937, 135.251)
+
+[node name="Sprite2D" type="Sprite2D"]
+z_index = 3
+texture_filter = 1
+position = Vector2(129, -43)
+scale = Vector2(47.5976, 46.9129)
+texture = ExtResource("1_pa4kl")
+script = ExtResource("2_y6qb2")
+
+[node name="GT" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0106712
+anchor_top = 0.0111569
+anchor_right = 0.429421
+anchor_bottom = 0.129907
+offset_left = -29.7074
+offset_top = -44.7851
+offset_right = 90.2926
+offset_bottom = 24.2149
+scale = Vector2(0.3, 0.3)
+text = "Genre!"
+label_settings = SubResource("LabelSettings_wcw00")
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AT" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0104175
+anchor_top = 0.0107403
+anchor_right = 0.447918
+anchor_bottom = 0.11699
+offset_left = -29.6668
+offset_top = -9.71845
+offset_right = 90.3332
+offset_bottom = 59.2816
+scale = Vector2(0.3, 0.3)
+text = "Actor!
+"
+label_settings = SubResource("LabelSettings_wcw00")
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ZT" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0106806
+anchor_top = 0.0143306
+anchor_right = 0.43568
+anchor_bottom = 0.126831
+offset_left = -29.7089
+offset_top = 24.7071
+offset_right = 90.2912
+offset_bottom = 93.7071
+scale = Vector2(0.3, 0.3)
+text = "Zhuzh!
+"
+label_settings = SubResource("LabelSettings_wcw00")
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.6682, 1.97174)
+shape = SubResource("RectangleShape2D_jj533")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnwc25dhhyws2"]
+
+[ext_resource type="Texture2D" uid="uid://cii10wattuj8f" path="res://Assets/ScriptPaper.png" id="1_6jamh"]
+[ext_resource type="Script" path="res://Scenes/script_one.gd" id="2_8rape"]
+[ext_resource type="FontFile" uid="uid://b3tdq4uxriiqj" path="res://Font/FSEX300.ttf" id="2_63f5o"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="4_uksou"]
+[ext_resource type="AudioStream" uid="uid://q6tt4k4o21p3" path="res://Assets/Paperslide.wav" id="5_ny55x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqu42"]
+size = Vector2(200.176, 219.34)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8pufe"]
+line_spacing = 5.0
+font = ExtResource("2_63f5o")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Script One" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(567, 316)
+scale = Vector2(1.42375, 1.41333)
+texture = ExtResource("1_6jamh")
+script = ExtResource("2_8rape")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.351196, 0)
+shape = SubResource("RectangleShape2D_mqu42")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="ScriptText" type="Label" parent="."]
+process_mode = 3
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -67.4276
+offset_top = -104.717
+offset_right = -134.428
+offset_bottom = -114.717
+grow_horizontal = 2
+grow_vertical = 2
+text = "Script Title
+Genre
+Actors
+Zhuzh"
+label_settings = SubResource("LabelSettings_8pufe")
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("4_uksou")
+
+[node name="SwooshyNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ny55x")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

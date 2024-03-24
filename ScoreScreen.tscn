@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1g4fe0j333kp"]
+
+[ext_resource type="Texture2D" uid="uid://cknv1an3ufkw0" path="res://Assets/DescriptionOrHighScoreSetup.png" id="1_4vja5"]
+[ext_resource type="FontFile" uid="uid://b3tdq4uxriiqj" path="res://Font/FSEX300.ttf" id="2_4em5p"]
+[ext_resource type="Script" path="res://ScoreScreen.gd" id="2_ap5t3"]
+[ext_resource type="LabelSettings" uid="uid://b4i0cytfss4o3" path="res://Font/StandardTextSorta.tres" id="3_ju5iu"]
+[ext_resource type="LabelSettings" uid="uid://ci5cpxu8bolwl" path="res://Font/StandardTextFrThisTime.tres" id="4_qr1d4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvq57"]
+font = ExtResource("2_4em5p")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bsjqj"]
+font = ExtResource("2_4em5p")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdiwn"]
+font = ExtResource("2_4em5p")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(576, 324)
+scale = Vector2(1.44, 1.44)
+texture = ExtResource("1_4vja5")
+script = ExtResource("2_ap5t3")
+
+[node name="Win or Lose" type="Label" parent="."]
+offset_left = -336.111
+offset_top = -225.0
+offset_right = 335.889
+offset_bottom = -161.0
+text = "TEXT GOES HERE YAHAR!"
+label_settings = ExtResource("3_ju5iu")
+horizontal_alignment = 1
+
+[node name="Time Lasted" type="Label" parent="."]
+offset_left = -228.472
+offset_top = -120.833
+offset_right = -20.4722
+offset_bottom = -88.8333
+text = "Weeks Lasted: "
+label_settings = ExtResource("4_qr1d4")
+horizontal_alignment = 1
+
+[node name="Money Made" type="Label" parent="."]
+offset_left = -197.917
+offset_top = -71.5278
+offset_right = -21.9167
+offset_bottom = -39.5278
+text = "Money Left: "
+label_settings = ExtResource("4_qr1d4")
+
+[node name="Scripts Produced" type="Label" parent="."]
+offset_left = -295.139
+offset_top = -22.9166
+offset_right = -23.1389
+offset_bottom = 9.08336
+text = "Scripts Produced: "
+label_settings = ExtResource("4_qr1d4")
+
+[node name="Final Score" type="Label" parent="."]
+offset_left = -354.861
+offset_top = 29.8611
+offset_right = -42.8611
+offset_bottom = 77.8611
+text = "Final Score: "
+label_settings = SubResource("LabelSettings_kvq57")
+
+[node name="High Score" type="Label" parent="."]
+offset_left = -256.25
+offset_top = 80.5556
+offset_right = 55.75
+offset_bottom = 128.556
+text = "High Score: "
+label_settings = SubResource("LabelSettings_bsjqj")
+
+[node name="NA" type="Button" parent="."]
+offset_left = -317.361
+offset_top = 131.25
+offset_right = -154.361
+offset_bottom = 180.25
+
+[node name="Label" type="Label" parent="NA"]
+layout_mode = 0
+offset_left = 30.5556
+offset_top = 15.2778
+offset_right = 126.556
+offset_bottom = 32.2778
+text = "New Attempt?"
+label_settings = SubResource("LabelSettings_wdiwn")
+horizontal_alignment = 1
+
+[node name="MM" type="Button" parent="."]
+offset_left = 145.139
+offset_top = 133.333
+offset_right = 308.139
+offset_bottom = 182.333
+
+[node name="Label" type="Label" parent="MM"]
+layout_mode = 0
+offset_left = 33.3333
+offset_top = 6.94446
+offset_right = 129.333
+offset_bottom = 41.9445
+text = "Return to 
+Main Menu?"
+label_settings = SubResource("LabelSettings_wdiwn")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="NA" to="." method="_on_na_pressed"]
+[connection signal="pressed" from="MM" to="." method="_on_mm_pressed"]

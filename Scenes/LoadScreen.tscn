@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://baqrh53a8yi6c"]
+
+[ext_resource type="Texture2D" uid="uid://cknv1an3ufkw0" path="res://Assets/DescriptionOrHighScoreSetup.png" id="1_04itg"]
+[ext_resource type="Script" path="res://Scenes/LoadScreen.gd" id="1_yv8tl"]
+[ext_resource type="FontFile" uid="uid://b3tdq4uxriiqj" path="res://Font/FSEX300.ttf" id="2_y6q36"]
+[ext_resource type="AudioStream" uid="uid://q6tt4k4o21p3" path="res://Assets/Paperslide.wav" id="4_yyqdr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_67nam"]
+line_spacing = 4.0
+font = ExtResource("2_y6q36")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7x621"]
+font = ExtResource("2_y6q36")
+font_color = Color(0, 0, 0, 1)
+
+[node name="LoadScreen" type="Node2D"]
+script = ExtResource("1_yv8tl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_04itg")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 56.0
+offset_top = 10.0
+offset_right = 1094.0
+offset_bottom = 617.0
+text = "Welcome to your studio aspiring movie exec!
+ 
+Every 4 weeks you will vote on what movie to produce.
+The people will express what they are interested in via the phone on your desk. Try to match what the people want! 
+ 
+Each trend falls into one of three categories:
+Genre: pretty self explanatory.
+ 
+Actor: the actors who are on the front page of the scripts, the namesakes if you will.
+ 
+Zhuzh: the aspects of movies that make the film stand out from the crowd.
+ 
+Well those are the basics, good luck to you!
+"
+label_settings = SubResource("LabelSettings_67nam")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 846.0
+offset_top = 534.0
+offset_right = 1061.0
+offset_bottom = 595.0
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 215.0
+offset_bottom = 55.0
+text = "Start your 
+Movie Producing Journey!"
+label_settings = SubResource("LabelSettings_7x621")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yyqdr")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
