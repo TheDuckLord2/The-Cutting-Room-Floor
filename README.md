@@ -1,7 +1,7 @@
 # The-Cutting-Room-Floor
  MsState Game Design Game Jam Submission
  
- Download TCRFW.exe to play!
+ Download TCRFW.zip to play!
 
  How to play: 
  You will get 2 scripts on your desk, each one having a few aspects:
